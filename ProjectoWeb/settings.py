@@ -135,37 +135,18 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'ProyectowebApp/static'),)
+
 MEDIA_URL='/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR, 'media')
 
-if not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory
-    # in your application directory on Render.
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-    # Turn on WhiteNoise storage backend that takes care of compressing static files
-    # and creating unique names for each version so they can safely be cached forever.
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
-EMAIL_HOST_USER ='alberluz90@gmail.com'
-EMAIL_HOST_PASSWORD = 'Carballeda1960'
-
-
-MESSAGE_TAGS={
-
-    mensajes_de_error.DEBUG: 'debug',
-    mensajes_de_error.INFO: 'info',
-    mensajes_de_error.SUCCESS: 'success',
-    mensajes_de_error.WARNING: 'warning',
-    mensajes_de_error.ERROR: 'danger',
-
-}
 
 
