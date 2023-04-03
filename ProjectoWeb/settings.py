@@ -151,11 +151,11 @@ if not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.hotmail.com'
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER ='eugev_22@hotmail.com'
-EMAIL_HOST_PASSWORD = 'Carballeda90'
+EMAIL_HOST_USER ='alberluz90@gmail.com'
+EMAIL_HOST_PASSWORD = 'Carballeda1960'
 
 
 MESSAGE_TAGS={
