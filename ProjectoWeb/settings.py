@@ -91,11 +91,14 @@ WSGI_APPLICATION = 'ProjectoWeb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default='postgresql://postgres:postgres@localhost/postgres',
+#         conn_max_age=600
+#       )}
+
 DATABASES = {
-    'default': dj_database_url.config(
-        default='postgresql://postgres:postgres@localhost/postgres',
-        conn_max_age=600
-      )}
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))}
 
 
 # Password validation
@@ -148,5 +151,20 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+EMAIL_BACKEND="django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST="smtp.gmail.com"
+EMAIL_USE_TLS=True
+EMAIL_PORT=587
+EMAIL_HOST_USER="alberluz90@gmail.com"
+EMAIL_HOST_PASSWORD="Carballeda90"
 
+MESSAGE_TAGS={
+
+    mensajes_de_error.DEBUG: 'debug',
+    mensajes_de_error.INFO: 'info',
+    mensajes_de_error.SUCCESS: 'success',
+    mensajes_de_error.WARNING: 'warning',
+    mensajes_de_error.ERROR: 'danger',
+
+}
 
